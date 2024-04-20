@@ -2,25 +2,9 @@ import { useState } from 'react';
 import './BizToken.css';
 
 
-
 export default function BizToken() {
 
-    // const UserForm = () => {
-    //     const [formData,setFormData] = useState({
-    //         name: '',
-    //         occupation: '',
-    //         email: '',
-    //         PhoneNum: '',
-    //         socials: '',
-    //         color: '',
-    //         image: ''
-    //     });
 
-    //     const updateChange = (event) =>{                //event = when client updates values in form fields
-    //         const{name, value} = event.target;          //setformdata will update formdata with new updated values
-    //         setFormData({...UserForm, [name]: value});  // ...userform = spread -> new object, copies old userform
-    //     };                                               // [name]: value -> dynamic update values based on what was inputted in field
-    // };
     const [formData,setFormData] = useState({
         name: '',
         occupation: '',
@@ -38,14 +22,41 @@ export default function BizToken() {
 
     
     
-    const handleSubmission = (event) =>{
-        event.preventDefault(); //stop page from reloading
-
+    const handleSubmission = async (event) => {
+        event.preventDefault(); //stop page from reloading after submission
         
-                                //can add more stuff here to like send values to backend
-        console.log(formData);  //sends formdata to console for debugging
+        // try{
+        //     const response = await fetch( 'backend endpoint', {
+        //         method: 'POST',                                     //making a POST request to backend
+        //         headers: {'Content-Type': 'application/json'},      //defines content type to be JSON
+        //         body: JSON.stringify(formData)                      //converts formdata to JSON string
+        //     });
 
-        setFormData({           //reset form
+        //     console.log(formData);                                  //sends formData to console for debugging
+
+        //     if (!response.ok) {                                     //does not autocheck errors like Axios, need to check if request went through properly
+        //         throw new Error('Failed to submit form');
+        //     }
+        //                                                             //await works similarly to .then
+        //     const responseData = await response.json();             //does not auto do it like axios, so need to call, await response.json
+        //     console.log('form submitted:', responseData);           //to translate response back to json,
+
+        //     setFormData({                                           //reset form
+        //         name: '',
+        //         occupation: '',
+        //         email: '',
+        //         PhoneNum: '',
+        //         socials: '',
+        //         color: '',
+        //         image: ''
+        //     });
+
+        // } catch (error) {
+        //     console.error('Error submitting form:', error.message);
+        // }
+
+        console.log(formData);
+        setFormData({                                           //reset form
             name: '',
             occupation: '',
             email: '',
