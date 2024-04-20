@@ -77,7 +77,7 @@ async function fetchCards(req, res) {
 async function updateCard(req, res) {
     try {
         const { cardId } = req.params;
-        const { category, title, content } = req.body;
+        const { occupation, email, phoneNum, socials, color, quote } = req.body;
     
         // Find the card by ID
         const card = await Card.findById(cardId);
@@ -87,9 +87,12 @@ async function updateCard(req, res) {
         }
     
         // Update the card fields
-        card.category = category;
-        card.title = title;
-        card.content = content;
+        card.occupation = occupation;
+        card.email = email;
+        card.phoneNum = phoneNum;
+        card.socials = socials;
+        card.color = color;
+        card.quote = quote;
     
         // Save the updated card
         await card.save();
@@ -103,6 +106,7 @@ async function updateCard(req, res) {
 
 async function deleteCard(req, res) {
     const cardId = req.params.cardId;
+    
     try {
         const card = await Card.findById(cardId);
 
@@ -112,7 +116,7 @@ async function deleteCard(req, res) {
         }
 
         // now, delete the card
-        await card.remove();
+        await Card.findByIdAndDelete(cardId);
         
         // indicate successful delete
         res.status(200).json({ message: 'Card has been deleted' });
