@@ -4,7 +4,8 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
 import NavBar from '../../components/NavBar/NavBar';
-import BizToken from '../CreateBizToken/BizToken.jsx';
+import BizToken from '../CreateBizToken/BizToken';
+import PersonalBizToken from '../PersonalBizToken/PersonalBizToken';
 
 import '../App/App.css';
 
@@ -18,9 +19,9 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path="/" element={<HomePage />}/>
-            <Route path="/card/new" element={<BizToken />} />
-
+            <Route path="/" element={<HomePage user={user} />}/>
+            <Route path="/cards/new" element={<BizToken user={user} />} />
+            <Route path="/cards/:cardId" element={<PersonalBizToken />} />
           </Routes>
         </>
       ) : (

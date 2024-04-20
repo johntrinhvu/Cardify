@@ -3,8 +3,6 @@ import './BizToken.css';
 
 
 export default function BizToken() {
-
-
     const [formData,setFormData] = useState({
         name: '',
         occupation: '',
