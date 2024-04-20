@@ -1,105 +1,108 @@
 import { useState } from 'react';
+import * as cardsAPI from '../../utilities/cards-api';
 import './BizToken.css';
 
 
-export default function BizToken() {
-    const [formData,setFormData] = useState({
-        name: '',
+export default function BizToken({ user, setUser }) {
+    // console.log(user.name, "username")
+    // console.log(user, "user")
+    const [formData, setFormData] = useState({
+        user: user,
         occupation: '',
         email: '',
-        PhoneNum: '',
+        phoneNum: '',
         socials: '',
         color: '',
-        image: ''
+        quote: '',
+        error: '',
+        createdCard: null
     });
-    //small head
-    const updateChange = (event) =>{                //event = when client updates values in form fields
-        const{name, value} = event.target;          //setformdata will update formdata with new updated values
-        setFormData({...formData, [name]: value});  // ...userform = spread -> new object, copies old userform
-    };                                               // [name]: value -> dynamic update values based on what was inputted in field
 
-    
+    //small head
+    const updateChange = (event) => {                //event = when client updates values in form fields
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value,
+            error: ''
+        });
+    };                                               // [name]: value -> dynamic update values based on what was inputted in field
     
     const handleSubmission = async (event) => {
+        console.log('hello')
         event.preventDefault(); //stop page from reloading after submission
-        
-        // try{
-        //     const response = await fetch( 'backend endpoint', {
-        //         method: 'POST',                                     //making a POST request to backend
-        //         headers: {'Content-Type': 'application/json'},      //defines content type to be JSON
-        //         body: JSON.stringify(formData)                      //converts formdata to JSON string
-        //     });
+        const { user, occupation, email, phoneNum, socials, color, quote } = formData;
 
-        //     console.log(formData);                                  //sends formData to console for debugging
+        console.log(user, occupation, email, phoneNum, socials, color, quote)
+        try {
+            const cardData = {
+                user,
+                occupation,
+                email,
+                phoneNum,
+                socials,
+                color,
+                quote
+            };
 
-        //     if (!response.ok) {                                     //does not autocheck errors like Axios, need to check if request went through properly
-        //         throw new Error('Failed to submit form');
-        //     }
-        //                                                             //await works similarly to .then
-        //     const responseData = await response.json();             //does not auto do it like axios, so need to call, await response.json
-        //     console.log('form submitted:', responseData);           //to translate response back to json,
+            console.log(cardData)
+            
+            const createdCard = await cardsAPI.createCard(cardData);
+            console.log('hello')        //does not auto do it like axios, so need to call, await response.json
+            console.log(createdCard); 
 
-        //     setFormData({                                           //reset form
-        //         name: '',
-        //         occupation: '',
-        //         email: '',
-        //         PhoneNum: '',
-        //         socials: '',
-        //         color: '',
-        //         image: ''
-        //     });
+            // redirect new card's URL
+            window.location.href = `/cards/${createdCard._id}`;
 
-        // } catch (error) {
-        //     console.error('Error submitting form:', error.message);
-        // }
+            setFormData({
+                ...formData,                                           //reset form
+                occupation: '',
+                email: '',
+                phoneNum: '',
+                socials: '',
+                color: '',
+                quote: '',
+                error: ''
+            });
 
-        console.log(formData);
-        setFormData({                                           //reset form
-            name: '',
-            occupation: '',
-            email: '',
-            PhoneNum: '',
-            socials: '',
-            color: '',
-            image: ''
-        });
+        } catch (error) {
+            setFormData({ 
+                ...formData,
+                error: 'Creating card failed - Try Again' 
+            });
+        }
     };
-    
+
     return (
-      <main>
+        <main>
         <h2>Your Information</h2>
         <form onSubmit={handleSubmission}>
-            <label >
-                Name: <input type="text" name="name" value = {formData.name} onChange={updateChange} />
+            <label>
+                Name: {user.name}
             </label> <br/>
             <label >
-                Occupation: <input type="text" name="occupation" value = {formData.occupation} onChange={updateChange} />
+                Occupation: <input type="text" name="occupation" value={formData.occupation} onChange={updateChange} />
             </label> <br/>
             <label >
-                Email: <input type="text" name="email" value = {formData.email} onChange={updateChange} />
+                Email: <input type="email" name="email" value={formData.email} onChange={updateChange} />
             </label> <br/>
             <label >
-                Phone Number: <input type="text" name="phonenum" value = {formData.PhoneNum} onChange={updateChange} />
+                Phone Number: <input type="text" name="phoneNum" value={formData.phoneNum} onChange={updateChange} />
             </label> <br/>
             <label >
-                Social Media(s): <input type="text" name="socials" value = {formData.socials} onChange={updateChange} />
+                Social Media(s): <input type="text" name="socials" value={formData.socials} onChange={updateChange} />
             </label> <br/>
-
-            <div>
-                <p>Click to add more social media links</p>
-            </div>
             <div>
                 <h2>Color Scheme & Design</h2>
                 <label >
-                    Color: <input type="text" name="color" value = {formData.color} onChange={updateChange} />
+                    Color: <input type="text" name="color" value={formData.color} onChange={updateChange} />
                 </label> <br/>
                 <label >
-                    Input Image: <input type="text" name="image" value = {formData.image} onChange={updateChange} />
+                    Input quote: <input type="text" name="quote" value={formData.quote} onChange={updateChange} />
                 </label> <br/>
             </div>
             <button type='submit'>Submit</button>
         </form>
         
-      </main>
+        </main>
     );
-  }
+}
