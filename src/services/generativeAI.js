@@ -1,9 +1,11 @@
-require('dotenv').config({ path: '../.env' });
+
+
+require('dotenv').config({ path: '../../.env' });
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // Access your API key as an environment variable (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
 const testInput = "software engineer, uci graduate, john vu"
 
@@ -19,4 +21,4 @@ async function run(userInput) {
   console.log(text);
 }
 
-run(testInput);
+module.exports = { run };
