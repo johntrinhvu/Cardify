@@ -77,11 +77,26 @@ export default function PersonalBizToken() {
                                 {card.user.name}
                                 {currentUser === cardUserId && (
                                     <div className="edit-options">
-                                        <button className="edit-button-cardpage">
+                                        <button className="edit-button-cardpage" onClick={handleEdit} title="Edit">
                                             Edit Card
                                         </button>
                                     </div>
                                 )}
+                            </div>
+                            <div className="occupation-div">
+                                <h3 className="occupation-h3">{card.occupation}</h3>
+                            </div>
+                            <div className="email-div">
+                                <h3 className="email-h3">{card.email}</h3>
+                            </div>
+                            <div className="phoneNum-div">
+                                <h3 className="phoneNum-h3">{card.phoneNum}</h3>
+                            </div>
+                            <div className="socials-div">
+                                <h3 className="socials-h3">{card.socials}</h3>
+                            </div>
+                            <div className="quote-div">
+                                <h3 className="quote-h3">{card.quote}</h3>
                             </div>
                         </div>
                     )}
