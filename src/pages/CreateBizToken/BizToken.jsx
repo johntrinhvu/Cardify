@@ -105,7 +105,7 @@ export default function BizToken({ user, setUser }) {
                 </label> <br/>
                 <label className="BizToken-label">
                      <input type="text" name="quote" value = {formData.quote} onChange={updateChange}
-                    className="BizToken-input" placeholder='Quote...'/>
+                    className="BizToken-input" placeholder='Ask Gemini AI to create a one-sentence tagline' />
                 </label> <br/>
             </div>
             <button type='submit' className='BizToken-Submit'>Submit</button>
