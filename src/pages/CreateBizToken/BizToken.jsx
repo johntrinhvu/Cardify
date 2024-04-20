@@ -78,37 +78,42 @@ export default function BizToken({ user, setUser }) {
         <form onSubmit={handleSubmission} className="BizToken-form">
             <h2 className="BizToken-header2">Your Information</h2>
             <label className="BizToken-label">
-                Name: {user.name}
+                <div className='box'><p>{user.name}</p></div>
+                
             </label> <br/>
             <label className="BizToken-label">
-                Occupation: <input type="text" name="occupation" value = {formData.occupation} onChange={updateChange}
+                 <input type="text" name="occupation" value = {formData.occupation} onChange={updateChange}
                  className="BizToken-input" placeholder='Job...'/>
             </label> <br/>
             <label className="BizToken-label">
-                Email: <input type="email" name="email" value = {formData.email} onChange={updateChange} className="BizToken-input"
+                <input type="email" name="email" value = {formData.email} onChange={updateChange} className="BizToken-input"
                 placeholder='Email...' />
             </label> <br/>
             <label className="BizToken-label">
-                Phone Number: <input type="text" name="phoneNum" value = {formData.phoneNum} onChange={updateChange} 
+                <input type="text" name="phoneNum" value = {formData.phoneNum} onChange={updateChange} 
                 className="BizToken-input" placeholder='Phone Number...'/>
             </label> <br/>
             <label className="BizToken-label">
-                Social Media(s): <input type="text" name="socials" value = {formData.socials} onChange={updateChange}
+                <input type="text" name="socials" value = {formData.socials} onChange={updateChange}
                  className="BizToken-input" placeholder='Social Medias...'/>
             </label> <br/>
             <div>
                 <h2>Color Scheme & Design</h2>
                 <label className="BizToken-label">
-                    Color: <input type="text" name="color" value = {formData.color} onChange={updateChange} 
+                     <input type="text" name="color" value = {formData.color} onChange={updateChange} 
                     className="BizToken-input" placeholder='Color Scheme...'/>
                 </label> <br/>
                 <label className="BizToken-label">
-                    Tagline: <input type="text" name="quote" value = {formData.quote} onChange={updateChange}
-                    className="BizToken-input" placeholder='Ask Gemini AI to create a one-sentence tagline'/>
+                     <input type="text" name="quote" value = {formData.quote} onChange={updateChange}
+                    className="BizToken-input" placeholder='Ask Gemini AI to create a one-sentence tagline' />
                 </label> <br/>
             </div>
             <button type='submit' className='BizToken-Submit'>Submit</button>
         </form>
+
+        <div className='B-card'>
+            <p className='card-text'>hi</p>
+        </div>
       </main>
     );
 }
