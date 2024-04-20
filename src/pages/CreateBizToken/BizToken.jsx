@@ -30,7 +30,7 @@ export default function BizToken() {
         color: '',
         image: ''
     });
-
+    //small head
     const updateChange = (event) =>{                //event = when client updates values in form fields
         const{name, value} = event.target;          //setformdata will update formdata with new updated values
         setFormData({...formData, [name]: value});  // ...userform = spread -> new object, copies old userform
