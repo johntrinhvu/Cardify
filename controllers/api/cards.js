@@ -10,11 +10,13 @@ module.exports = {
 
 async function create(req, res) {
     const { email, occupation, phoneNum, socials, color, quote } = req.body;
-    const { name } = req.user;
+    console.log(email, occupation, phoneNum, 'hello')
+    const { name, _id } = req.user;
+    console.log(name, "controllers");
 
     try {
       const newCard = await Card.create({ 
-        user: { name },
+        user: { name, _id },
         email: email,
         occupation: occupation,
         phoneNum: phoneNum,
