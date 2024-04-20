@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import './LogInForm.css';
 
 export default function LogInForm({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -28,17 +29,18 @@ export default function LogInForm({ setUser }) {
   }
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
+    <>
+      <div className="title-wrapper">
+        <h1 className="title">Welcome back</h1>
+      </div>
+      <div className="login-container">
+        <form autoComplete="off" onSubmit={handleSubmit} className="input-wrapper">
+          <input type="email" placeholder="Email address" className="login-input-box" name="email" value={credentials.email} onChange={handleChange} required />
+          <input type="password" placeholder="Password" className="login-input-box" name="password" value={credentials.password} onChange={handleChange} required />
+          <button type="submit" className="continue-btn">Continue</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
-    </div>
+    </>
   );
 }
