@@ -85,11 +85,11 @@ export default function BizToken({ user, setUser }) {
                  className="BizToken-input" placeholder='Job...'/>
             </label> <br/>
             <label className="BizToken-label">
-                Email: <input type="text" name="email" value = {formData.email} onChange={updateChange} className="BizToken-input"
+                Email: <input type="email" name="email" value = {formData.email} onChange={updateChange} className="BizToken-input"
                 placeholder='Email...' />
             </label> <br/>
             <label className="BizToken-label">
-                Phone Number: <input type="text" name="PhoneNum" value = {formData.PhoneNum} onChange={updateChange} 
+                Phone Number: <input type="text" name="phoneNum" value = {formData.phoneNum} onChange={updateChange} 
                 className="BizToken-input" placeholder='Phone Number...'/>
             </label> <br/>
             <label className="BizToken-label">
@@ -109,6 +109,6 @@ export default function BizToken({ user, setUser }) {
             </div>
             <button type='submit' className='BizToken-Submit'>Submit</button>
         </form>
-        </main>
+      </main>
     );
 }
