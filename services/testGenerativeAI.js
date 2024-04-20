@@ -17,7 +17,7 @@ model.generateContent(prompt)
         console.error("Error:", error);
     });
 
-    // curl \
-    // -H 'Content-Type: application/json' \
-    // -d '{"contents":[{"parts":[{"text":"Write a story about a magic backpack"}]}]}' \
-    // -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDCIlom8alm7hMLhx5yQ9mUhYDVeDUTptw'
+// curl \
+// -H 'Content-Type: application/json' \
+// -d '{"contents":[{"parts":[{"text":"Write a story about a magic backpack"}]}]}' \
+// -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDCIlom8alm7hMLhx5yQ9mUhYDVeDUTptw'
