@@ -19,39 +19,10 @@ export default function BizToken() {
     };                                               // [name]: value -> dynamic update values based on what was inputted in field
 
     
-    
     const handleSubmission = async (event) => {
         event.preventDefault(); //stop page from reloading after submission
         
-        // try{
-        //     const response = await fetch( 'backend endpoint', {
-        //         method: 'POST',                                     //making a POST request to backend
-        //         headers: {'Content-Type': 'application/json'},      //defines content type to be JSON
-        //         body: JSON.stringify(formData)                      //converts formdata to JSON string
-        //     });
-
-        //     console.log(formData);                                  //sends formData to console for debugging
-
-        //     if (!response.ok) {                                     //does not autocheck errors like Axios, need to check if request went through properly
-        //         throw new Error('Failed to submit form');
-        //     }
-        //                                                             //await works similarly to .then
-        //     const responseData = await response.json();             //does not auto do it like axios, so need to call, await response.json
-        //     console.log('form submitted:', responseData);           //to translate response back to json,
-
-        //     setFormData({                                           //reset form
-        //         name: '',
-        //         occupation: '',
-        //         email: '',
-        //         PhoneNum: '',
-        //         socials: '',
-        //         color: '',
-        //         image: ''
-        //     });
-
-        // } catch (error) {
-        //     console.error('Error submitting form:', error.message);
-        // }
+        
 
         console.log(formData);
         setFormData({                                           //reset form
@@ -67,22 +38,28 @@ export default function BizToken() {
     
     return (
       <main>
-        <h2 className="BizToken-header2">Your Information</h2>
+        
         <form onSubmit={handleSubmission} className="BizToken-form">
+            <h2 className="BizToken-header2">Your Information</h2>
             <label className="BizToken-label">
-                Name: <input type="text" name="name" value = {formData.name} onChange={updateChange} className="BizToken-input" />
+                Name: <input type="text" name="name" value = {formData.name} onChange={updateChange}
+                 className="BizToken-input" placeholder='Name...'/>
             </label> <br/>
-            <label >
-                Occupation: <input type="text" name="occupation" value = {formData.occupation} onChange={updateChange} />
+            <label className="BizToken-label">
+                Occupation: <input type="text" name="occupation" value = {formData.occupation} onChange={updateChange}
+                 className="BizToken-input" placeholder='Job...'/>
             </label> <br/>
-            <label >
-                Email: <input type="text" name="email" value = {formData.email} onChange={updateChange} />
+            <label className="BizToken-label">
+                Email: <input type="text" name="email" value = {formData.email} onChange={updateChange} className="BizToken-input"
+                placeholder='Email...' />
             </label> <br/>
-            <label >
-                Phone Number: <input type="text" name="phonenum" value = {formData.PhoneNum} onChange={updateChange} />
+            <label className="BizToken-label">
+                Phone Number: <input type="text" name="PhoneNum" value = {formData.PhoneNum} onChange={updateChange} 
+                className="BizToken-input" placeholder='Phone Number...'/>
             </label> <br/>
-            <label >
-                Social Media(s): <input type="text" name="socials" value = {formData.socials} onChange={updateChange} />
+            <label className="BizToken-label">
+                Social Media(s): <input type="text" name="socials" value = {formData.socials} onChange={updateChange}
+                 className="BizToken-input" placeholder='Social Medias...'/>
             </label> <br/>
 
             <div>
@@ -90,14 +67,16 @@ export default function BizToken() {
             </div>
             <div>
                 <h2>Color Scheme & Design</h2>
-                <label >
-                    Color: <input type="text" name="color" value = {formData.color} onChange={updateChange} />
+                <label className="BizToken-label">
+                    Color: <input type="text" name="color" value = {formData.color} onChange={updateChange} 
+                    className="BizToken-input" placeholder='Color Scheme...'/>
                 </label> <br/>
-                <label >
-                    Input Image: <input type="text" name="image" value = {formData.image} onChange={updateChange} />
+                <label className="BizToken-label">
+                    Input Image: <input type="text" name="image" value = {formData.image} onChange={updateChange}
+                    className="BizToken-input" placeholder='Quote...'/>
                 </label> <br/>
             </div>
-            <button type='submit'>Submit</button>
+            <button type='submit' className='BizToken-Submit'>Submit</button>
         </form>
         
       </main>
