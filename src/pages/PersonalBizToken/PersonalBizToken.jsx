@@ -86,8 +86,11 @@ export default function PersonalBizToken() {
                             <div className="card-body">
                                 <div className="left-column">
                                     <h3 className="occupation-h3">{card.occupation}</h3>
-                                    <h3 className="quote-h3">{card.quote}</h3>
                                     <h3 className="socials-h3">{card.socials}</h3>
+                                </div>
+                                <div className="middle-column">
+                                    <h3 className="quote-h3">{card.quote}</h3>
+
                                 </div>
                                 <div className="right-column">
                                     <h3 className="email-h3">{card.email}</h3>

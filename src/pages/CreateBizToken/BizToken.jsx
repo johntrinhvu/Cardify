@@ -5,10 +5,13 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
+console.log(process.env.REACT_APP_API_KEY, 'HEFLSDFOSK');
+console.log(genAI);
+console.log(process.env.DATABASE_URL);
 
 async function callGeminiAI(userInput) {
   // For text-only input, use the gemini-pro model
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
   const prompt = "Give me a one-sentence tagline for the following user input:" + userInput
 
@@ -46,10 +49,11 @@ export default function BizToken({ user, setUser }) {
         console.log('hello')
         event.preventDefault(); //stop page from reloading after submission
 
-        const { user, occupation, email, phoneNum, socials, color, quote } = formData;
+        const { user, occupation, email, phoneNum, socials, color } = formData;
 
-        console.log(user, occupation, email, phoneNum, socials, color, quote)
         try {
+            const quote = await callGeminiAI(formData.quote);
+
             const cardData = {
                 user,
                 occupation,
@@ -57,11 +61,11 @@ export default function BizToken({ user, setUser }) {
                 phoneNum,
                 socials,
                 color,
-                quote
+                quote,
             };
 
-            console.log(cardData)
-            await callGeminiAI(formData.quote);
+            // console.log(cardData)
+            // await callGeminiAI(formData.quote);
             
             const createdCard = await cardsAPI.createCard(cardData);
             console.log('hello')        
