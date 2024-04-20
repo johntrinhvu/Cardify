@@ -75,7 +75,6 @@ export default function BizToken({ user, setUser }) {
 
     return (
       <main>
-        
         <form onSubmit={handleSubmission} className="BizToken-form">
             <h2 className="BizToken-header2">Your Information</h2>
             <label className="BizToken-label">
@@ -96,6 +95,7 @@ export default function BizToken({ user, setUser }) {
             <label className="BizToken-label">
                 Social Media(s): <input type="text" name="socials" value = {formData.socials} onChange={updateChange}
                  className="BizToken-input" placeholder='Social Medias...'/>
+            </label> <br/>
             <div>
                 <h2>Color Scheme & Design</h2>
                 <label className="BizToken-label">
@@ -105,6 +105,7 @@ export default function BizToken({ user, setUser }) {
                 <label className="BizToken-label">
                     Input Quote: <input type="text" name="quote" value = {formData.quote} onChange={updateChange}
                     className="BizToken-input" placeholder='Quote...'/>
+                </label> <br/>
             </div>
             <button type='submit' className='BizToken-Submit'>Submit</button>
         </form>
