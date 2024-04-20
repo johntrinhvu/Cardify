@@ -69,10 +69,10 @@ export default function BizToken() {
     
     return (
       <main>
-        <h2>Your Information</h2>
-        <form onSubmit={handleSubmission}>
-            <label >
-                Name: <input type="text" name="name" value = {formData.name} onChange={updateChange} />
+        <h2 className="BizToken-header2">Your Information</h2>
+        <form onSubmit={handleSubmission} className="BizToken-form">
+            <label className="BizToken-label">
+                Name: <input type="text" name="name" value = {formData.name} onChange={updateChange} className="BizToken-input" />
             </label> <br/>
             <label >
                 Occupation: <input type="text" name="occupation" value = {formData.occupation} onChange={updateChange} />
