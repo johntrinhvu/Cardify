@@ -2,7 +2,7 @@
     position: relative;
     top: 40px;
     /* left: 1000px; */
-    margin-left: 920px;
+    margin-left: 850px;
     /* background: rgba(255, 183, 197, 0.5); */
     width: 100%;
     max-width: 600px;
@@ -75,20 +75,49 @@
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
     margin-left: 200px;
     top: 300px;
-    display: grid;
-    place-items: center;
+    left: 150px;
+    /* display: grid;
+    place-items: center; */
     background-image: url('../../assets/cardbg2.jpg');
     /* background-size: cover; */
     background-position: center;
     background-repeat: repeat;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-shadow: -1px;
+    /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+
+    /* text-shadow: -1px; */
 }
 
 .B-card {
     text-align: center;
+    margin: 0px 0px;
+
 }
 
-/* .card-text{
-                add some text shadow and maybe weight? maybe change font?
-} */
+.card-text{
+    position: relative;         /* add some text shadow and maybe weight? maybe change font? */
+    margin-top: 40px;
+    margin-right: 330px;
+    font-size: 20px;
+}
+#ex-social{
+    position: relative;
+    top: 70px;
+    right: 170px;
+}
+#ex-num{
+    position: relative;
+    bottom: 100px;
+    left: 170px;
+}
+
+#ex-email{
+    position:relative;
+    bottom: 195px;
+    left: 150px;
+}
+
+#tagline{
+    position: relative;
+    bottom: 125px;
+    left: 195px;
+}

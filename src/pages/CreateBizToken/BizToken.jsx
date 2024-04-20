@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import * as cardsAPI from '../../utilities/cards-api';
 import './BizToken.css';
-
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // Access your API key as an environment variable (see "Set up your API key" above)
@@ -17,7 +16,7 @@ async function callGeminiAI(userInput) {
   const response = await result.response;
   const text = response.text();
   console.log(text);
-}
+};
 
 export default function BizToken({ user, setUser }) {
     // console.log(user.name, "username")
@@ -65,7 +64,7 @@ export default function BizToken({ user, setUser }) {
             await callGeminiAI(formData.quote);
             
             const createdCard = await cardsAPI.createCard(cardData);
-            console.log('hello')        //does not auto do it like axios, so need to call, await response.json
+            console.log('hello')        
             console.log(createdCard); 
 
             // redirect new card's URL
@@ -112,7 +111,7 @@ export default function BizToken({ user, setUser }) {
             </label> <br/>
             <label className="BizToken-label">
                 <input type="text" name="socials" value = {formData.socials} onChange={updateChange}
-                 className="BizToken-input" placeholder='Social Medias...'/>
+                 className="BizToken-input" placeholder='Social Media...'/>
             </label> <br/>
             <div>
                 <h2 className="BizToken-header2">Color Scheme & Design</h2>
@@ -129,7 +128,12 @@ export default function BizToken({ user, setUser }) {
         </form>
 
         <div className='B-card'>
-            <p className='card-text'>INSERT GEMINI TEXT HERE</p>
+            <p className='card-text'>John Doe <br/>
+            Example Job</p>
+            <br/><p id='ex-social'>Example Social </p>
+            <p id='ex-num'>Phone Number</p>
+            <p id='ex-email'>example@email.com</p>
+            <p id='tagline'>Tagline</p>
         </div>
       </main>
     );
