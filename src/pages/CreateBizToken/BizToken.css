@@ -2,8 +2,8 @@
     position: relative;
     top: 40px;
     /* left: 1000px; */
-    margin-left: 1000px;
-    background: rgba(255, 183, 197, 0.5);
+    margin-left: 920px;
+    /* background: rgba(255, 183, 197, 0.5); */
     width: 100%;
     max-width: 600px;
     padding: 0.5px 0px 20px;
@@ -19,24 +19,25 @@
     position: relative;
     /* left: 400px; */
     text-align: left;
-    padding-left: 20px;
-    color:crimson;
+    padding-left: 25px;
+    /* color:crimson; */
 }
 
 .BizToken-input {
-    width: 400px;
+    width: 550px;
     height: 30px;
     margin: 7px 10px;
     padding: 18px 15px;
-    color:crimson;
+    /* color:crimson; */
     box-sizing: border-box;
     font-size: 16px;
     border-radius: 7px;
-    /* align-items: left; */
+    border-color: lightgrey;
+    align-items: left;
 }
 
 .BizToken-input:focus {
-    border: 3px solid #555;
+    border-color: #555;
 }
 
 
@@ -48,4 +49,34 @@
 ::placeholder{
     color: black;
     opacity: 0.8;
+}
+
+.box {
+    width: 550px;
+    height: 30px;
+    position: absolute;
+    top: 50px;
+    left: 27px;
+    font-size: 16px;
+    text-align: center;
+    /* border: 3px solid lightgrey; */
+    display: grid;
+    place-items: center;
+    /* padding: 0px 0px 0px; */
+    /* margin: 0px 0px 0px; */
+}
+
+.B-card {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    border: 3px solid grey;
+    margin-left: 200px;
+    top: 300px;
+    display: grid;
+    place-items: center;
+}
+
+.B-card {
+    text-align: center;
 }
