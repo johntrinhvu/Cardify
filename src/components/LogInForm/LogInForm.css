@@ -96,15 +96,6 @@ form {
     margin: 0 0 15px;
 }
 
-input[type="email" i] {
-    /* padding block: 1px;
-    padding inline: 2px; */
-}
-
-input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) 
-{
-}
-
 .error-message {
     color: red;
     margin-top: -50px;
