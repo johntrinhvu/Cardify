@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from '../../logo.svg';
+import '../App/App.css';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <p>
           wake up
         </p>
+        
       </header>
     </div>
   );
