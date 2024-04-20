@@ -1,0 +1,42 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.card-container {
+    width: 800px;
+    height: 500px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-user {
+    font-size: 1.5rem;
+}
+
+.edit-options {
+    margin-left: auto;
+}
+
+.edit-button-cardpage {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
