@@ -1,23 +1,20 @@
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-// Initialize GoogleGenerativeAI object with the API key from environment variables
+// Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
-// Initialize the Generative Model
-const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+async function run() {
+  // For text-only input, use the gemini-pro model
+  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-const prompt = "Write a story about a magic backpack.";
-model.generateContent(prompt)
-    .then(result => {
-        console.log(result.response.text());
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
+  const prompt = "Give me a one-sentence tagline for the following user input: software engineer, uci graduate, john vu"
 
-// curl \
-// -H 'Content-Type: application/json' \
-// -d '{"contents":[{"parts":[{"text":"Write a story about a magic backpack"}]}]}' \
-// -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDCIlom8alm7hMLhx5yQ9mUhYDVeDUTptw'
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+}
+
+run();
