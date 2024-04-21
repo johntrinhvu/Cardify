@@ -2,12 +2,9 @@ import { useState } from 'react';
 import * as cardsAPI from '../../utilities/cards-api';
 import './BizToken.css';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-console.log(REACT_APP_API_KEY);
+
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
-console.log(process.env.REACT_APP_API_KEY, 'HEFLSDFOSK');
-console.log(genAI);
-console.log(process.env.DATABASE_URL);
 
 async function callGeminiAI(userInput) {
   // For text-only input, use the gemini-pro model
@@ -129,7 +126,6 @@ export default function BizToken({ user, setUser }) {
         </form>
 
         <div className='B-card'>
-            <p className='card-text'>{formData.quote}</p>
             <p className='card-text'>John Doe <br/>
             Example Job</p>
             <br/><p id='ex-social'>Example Social </p>
