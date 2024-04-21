@@ -73,8 +73,11 @@
 
 .other-page-link {
     padding: 4px;
+    color: #3B4EF3;
+    cursor: pointer;
 }
 
 .footer-text {
     color: rgb(158, 158, 158);
 }
+
