@@ -18,7 +18,8 @@ async function callGeminiAI(userInput) {
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
-  console.log(text);
+
+  return text;
 };
 
 export default function BizToken({ user, setUser }) {
@@ -50,10 +51,9 @@ export default function BizToken({ user, setUser }) {
         event.preventDefault(); //stop page from reloading after submission
 
         const { user, occupation, email, phoneNum, socials, color } = formData;
+        const quote = await callGeminiAI(formData.quote);
 
         try {
-            const quote = await callGeminiAI(formData.quote);
-
             const cardData = {
                 user,
                 occupation,
@@ -63,9 +63,6 @@ export default function BizToken({ user, setUser }) {
                 color,
                 quote,
             };
-
-            // console.log(cardData)
-            // await callGeminiAI(formData.quote);
             
             const createdCard = await cardsAPI.createCard(cardData);
             console.log('hello')        
