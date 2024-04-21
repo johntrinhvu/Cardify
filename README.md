@@ -1,4 +1,6 @@
 # Cardify
+## A Virtual Business Card Application
+
 ## Description
 Cardify allows users to create virtual business cards, which displays users' name, occupation, a short summary about themselves, email, phone number, and social media links. The project was developed over a span of 32 hours, with very minimal rest and sleep.
 
@@ -28,7 +30,18 @@ There were not that many planning materials used in the development in this proj
 
 ## Screenshots
 
+### Sign Up / Log In Page
+![SignupPage](https://github.com/johntrinhvu/Cardify/blob/main/screenshots/LoginPage.png)
+
+### Home Page
+![HomePage](https://github.com/johntrinhvu/Cardify/blob/main/screenshots/HomePage.png)
+
+### Creation of Business Card Page
+![CreationPage](https://github.com/johntrinhvu/Cardify/blob/main/screenshots/CreatingPage.png)
+
 ## Future Improvements
 - Enhance styling for a more polished User Interface.
-- Implemnt a QR code feature for an easy and wide-accessible usage of sharing business cards.
+- Implement a QR code feature for an easy and wide-accessible usage of sharing business cards.
 
+## Website
+The application is deployed and can be accessed at [Cardify]
