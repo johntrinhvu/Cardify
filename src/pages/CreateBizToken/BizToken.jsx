@@ -3,7 +3,7 @@ import * as cardsAPI from '../../utilities/cards-api';
 import './BizToken.css';
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-
+console.log(REACT_APP_API_KEY);
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
 
@@ -129,7 +129,7 @@ export default function BizToken({ user, setUser }) {
         </form>
 
         <div className='B-card'>
-            <p className='card-text'>INSERT GEMINI TEXT HERE</p>
+            <p className='card-text'>{formData.quote}</p>
         </div>
       </main>
     );
