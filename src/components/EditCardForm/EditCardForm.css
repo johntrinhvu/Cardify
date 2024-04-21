@@ -1,0 +1,149 @@
+.edit-occupation-text{
+    width: 300px;
+    font-size: 16px;
+    height: 30px;
+    border-color: lightgrey;
+    border-radius: 7px;
+}
+
+.edit-email-text{
+    width: 300px;
+    font-size: 16px;
+    height: 30px;
+    border-color: lightgrey;
+    border-radius: 7px;
+}
+
+.edit-phoneNum-text{
+    width: 300px;
+    font-size: 16px;
+    height: 30px;
+    border-color: lightgrey;
+    border-radius: 7px;
+}
+
+.edit-socials-text{
+    width: 300px;
+    font-size: 16px;
+    height: 30px;
+    border-color: lightgrey;
+    border-radius: 7px;
+}
+
+.edit-color-text{
+    width: 300px;
+    font-size: 16px;
+    height: 30px;
+    border-color: lightgrey;
+    border-radius: 7px;
+}
+
+.edit-quote-text{
+    width: 300px;
+    font-size: 16px;
+    height: 30px;
+    border-color: lightgrey;
+    border-radius: 7px;
+
+}
+
+
+
+
+
+.edit-occupation-div{
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 25px;
+    top: 50px;
+    width: 350px;
+}
+.edit-email-div{
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 385px;
+    bottom: 15px;
+    width: 350px;
+}
+.edit-phoneNum-div{
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 385px;
+    top: 40px;
+    width: 350px;
+}
+.edit-socials-div{
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 25px;
+    bottom: 25px;
+    width: 350px;
+}
+.edit-color-div{
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 25px;
+    top: 30px;
+    width: 350px;
+}
+.edit-quote-div{
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 32px;
+    position: relative;
+    bottom: 35px;
+    left: 385px;
+    width: 350px;
+    
+}
+
+
+
+
+.delete-card-button{
+    font-size: 16px;
+    margin-right: 375px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-image: linear-gradient(to right, #FF2400 0%, #FFA500 100%);
+    padding: 3px 8px;
+}
+.save-changes-button{
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-image: linear-gradient(to right, #056608 0%, #9ACD32 100%);
+    padding: 3px 10px;
+}
+.cancel-button{ 
+    font-size: 16px;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    padding: 3px 8px;
+}
+
+.line{
+    pointer-events: none;
+    position: relative;
+    border-left: 1px solid rgba(0, 0, 0, 0.35);
+    /* border-color: black; */
+    height: 315px;
+    bottom: 390px;
+    left: 380px;
+    width: 1px;
+}
