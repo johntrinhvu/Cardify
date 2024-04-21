@@ -2,12 +2,13 @@
     position: relative;
     top: 40px;
     /* left: 1000px; */
-    margin-left: 850px;
+    margin-left: 900px;
     /* background: rgba(255, 183, 197, 0.5); */
     width: 100%;
     max-width: 600px;
     padding: 0.5px 0px 20px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+    background-color: white;
 }
 @media (max-width: 1000px) {
     .BizToken-form{
@@ -44,6 +45,8 @@
 .BizToken-Submit{
     margin: 20px 0px 10px;
     font-size: 16px;
+    border-radius: 5px;
+    background-color: rgba(0,128,0,0.4);
 }
 
 ::placeholder{
@@ -90,34 +93,65 @@
 .B-card {
     text-align: center;
     margin: 0px 0px;
-
+    font-size: 18px;
+    text-shadow: 0px 0px ;
 }
-
 .card-text{
     position: relative;         /* add some text shadow and maybe weight? maybe change font? */
     margin-top: 40px;
     margin-right: 330px;
     font-size: 20px;
+    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+    background: #000000;
+    color:transparent;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
+
 }
 #ex-social{
     position: relative;
     top: 70px;
     right: 170px;
+    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+    background: #000000;
+    color:transparent;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
 }
 #ex-num{
     position: relative;
     bottom: 100px;
     left: 170px;
+    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+    background: #000000;
+    color:transparent;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
 }
 
 #ex-email{
     position:relative;
-    bottom: 195px;
+    bottom: 210px;
     left: 150px;
+    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+    background: #000000;
+    color:transparent;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
 }
 
 #tagline{
     position: relative;
     bottom: 125px;
     left: 195px;
+    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+    background: #000000;
+    color:transparent;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
 }

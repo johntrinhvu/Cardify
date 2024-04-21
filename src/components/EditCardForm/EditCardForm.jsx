@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // import { BiTrash } from 'react-icons/bi';
 import * as cardsAPI from '../../utilities/cards-api';
 import { useNavigate } from 'react-router-dom';
+import './EditCardForm.css';
 
 const EditCardForm = ({ card, updateCard, handleCancel }) => {
   const navigate = useNavigate();
@@ -72,17 +73,15 @@ const EditCardForm = ({ card, updateCard, handleCancel }) => {
                 <label className="edit-occupation">Occupation: </label>
               </div>
               <input 
-                style={{ height: 'auto' }} // As per your usage in the code
+                // style={{ height: 'auto' }} // As per your usage in the code
                 type="text" 
                 className="edit-occupation-text" 
                 name="occupation"
-                onChange={handleChange}
+                onChange={handleChange} 
                 value={editedCard.occupation} 
               />
               
-              <button type="button" className="delete-card-button" title="Delete card" onClick={handleDelete}>
-                Delete
-              </button>
+              
             </div>
       
             <div className="edit-email-div">
@@ -90,7 +89,7 @@ const EditCardForm = ({ card, updateCard, handleCancel }) => {
                 <label className="edit-email">Email: </label>
               </div>
               <input 
-                style={{ height: 'auto' }} // As per your usage in the code
+                // style={{ height: 'auto' }} // As per your usage in the code
                 type="email" 
                 className="edit-email-text" 
                 name="email" 
@@ -104,7 +103,7 @@ const EditCardForm = ({ card, updateCard, handleCancel }) => {
                 <label className="edit-phoneNum">Phone: </label>
               </div>
               <input 
-                style={{ height: 'auto' }} // As per your usage in the code
+                // style={{ height: 'auto' }} // As per your usage in the code
                 type="text" 
                 className="edit-phoneNum-text" 
                 name="phoneNum" 
@@ -118,7 +117,7 @@ const EditCardForm = ({ card, updateCard, handleCancel }) => {
                 <label className="edit-socials">Socials: </label>
               </div>
               <input 
-                style={{ height: 'auto' }} // As per your usage in the code
+                // style={{ height: 'auto' }} // As per your usage in the code
                 type="text" 
                 className="edit-socials-text" 
                 name="socials" 
@@ -132,7 +131,7 @@ const EditCardForm = ({ card, updateCard, handleCancel }) => {
                 <label className="edit-color">Color: </label>
               </div>
               <input 
-                style={{ height: 'auto' }} // As per your usage in the code
+                // style={{ height: 'auto' }} // As per your usage in the code
                 type="text" 
                 className="edit-color-text" 
                 name="color" 
@@ -146,7 +145,7 @@ const EditCardForm = ({ card, updateCard, handleCancel }) => {
                 <label className="edit-quote">Quote: </label>
               </div>
               <input 
-                style={{ height: 'auto' }} // As per your usage in the code
+                // style={{ height: 'auto' }} // As per your usage in the code
                 type="text" 
                 className="edit-quote-text" 
                 name="quote" 
@@ -156,13 +155,17 @@ const EditCardForm = ({ card, updateCard, handleCancel }) => {
             </div>
       
             <div className="save-button-edit">
-              <button type="submit" className="save-changes-button">
-                Save Changes
+              <button type="button" className="delete-card-button" title="Delete card" onClick={handleDelete}>
+                Delete Card
               </button>
               <button type="button" className="cancel-button" onClick={handleCancel}>
                 Cancel
               </button>
+              <button type="submit" className="save-changes-button">
+                Save Changes
+              </button>
             </div>
+            <div className='line'></div>
           </form>
         </div>
       );
