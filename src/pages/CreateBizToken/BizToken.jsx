@@ -89,11 +89,13 @@ export default function BizToken({ user, setUser }) {
     return (
       <main>
         <form onSubmit={handleSubmission} className="BizToken-form">
-            <h2 className="BizToken-header2">Your Information</h2>
+            <h2 className="BizToken-header2" id='infotitle'>Your Information</h2>
+            {/* <div className='box'> */}
             <label className="BizToken-label">
-                <div className='box'><p>Name: {user.name}</p></div>
+                <p className='box-text'>Name: {user.name}</p>
+            </label>
+            {/* </div> */}
                 
-            </label> <br/>
             <label className="BizToken-label">
                  <input type="text" name="occupation" value = {formData.occupation} onChange={updateChange}
                  className="BizToken-input" placeholder='Job...'/>
