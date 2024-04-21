@@ -10,8 +10,7 @@ async function callGeminiAI(userInput) {
   // For text-only input, use the gemini-pro model
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-  const prompt = "Give me a one-sentence tagline for the following user input:" + userInput
-
+  const prompt = "Give me a one-sentence tagline for the following user input:" + userInput;
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
