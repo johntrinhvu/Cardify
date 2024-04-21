@@ -1,23 +1,26 @@
 import { useState } from 'react';
 import * as cardsAPI from '../../utilities/cards-api';
 import './BizToken.css';
-
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 console.log(REACT_APP_API_KEY);
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_API_KEY);
+console.log(process.env.REACT_APP_API_KEY, 'HEFLSDFOSK');
+console.log(genAI);
+console.log(process.env.DATABASE_URL);
 
 async function callGeminiAI(userInput) {
   // For text-only input, use the gemini-pro model
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
   const prompt = "Give me a one-sentence tagline for the following user input:" + userInput
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
-  console.log(text);
-}
+
+  return text;
+};
 
 export default function BizToken({ user, setUser }) {
     // console.log(user.name, "username")
@@ -47,9 +50,9 @@ export default function BizToken({ user, setUser }) {
         console.log('hello')
         event.preventDefault(); //stop page from reloading after submission
 
-        const { user, occupation, email, phoneNum, socials, color, quote } = formData;
+        const { user, occupation, email, phoneNum, socials, color } = formData;
+        const quote = await callGeminiAI(formData.quote);
 
-        console.log(user, occupation, email, phoneNum, socials, color, quote)
         try {
             const cardData = {
                 user,
@@ -58,14 +61,11 @@ export default function BizToken({ user, setUser }) {
                 phoneNum,
                 socials,
                 color,
-                quote
+                quote,
             };
-
-            console.log(cardData)
-            await callGeminiAI(formData.quote);
             
             const createdCard = await cardsAPI.createCard(cardData);
-            console.log('hello')        //does not auto do it like axios, so need to call, await response.json
+            console.log('hello')        
             console.log(createdCard); 
 
             // redirect new card's URL
@@ -112,7 +112,7 @@ export default function BizToken({ user, setUser }) {
             </label> <br/>
             <label className="BizToken-label">
                 <input type="text" name="socials" value = {formData.socials} onChange={updateChange}
-                 className="BizToken-input" placeholder='Social Medias...'/>
+                 className="BizToken-input" placeholder='Social Media...'/>
             </label> <br/>
             <div>
                 <h2 className="BizToken-header2">Color Scheme & Design</h2>
@@ -130,6 +130,12 @@ export default function BizToken({ user, setUser }) {
 
         <div className='B-card'>
             <p className='card-text'>{formData.quote}</p>
+            <p className='card-text'>John Doe <br/>
+            Example Job</p>
+            <br/><p id='ex-social'>Example Social </p>
+            <p id='ex-num'>Phone Number</p>
+            <p id='ex-email'>example@email.com</p>
+            <p id='tagline'>Tagline</p>
         </div>
       </main>
     );
