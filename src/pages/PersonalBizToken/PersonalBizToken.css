@@ -48,11 +48,15 @@
 .edit-button-cardpage {
     background-color: #020e1a;
     color: #ffffff;
-    border: none;
-    padding: 10px 10px;
+    font-weight: bold;
+    padding: 8px 10px;
     margin-top: -2rem;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.edit-button-cardpage:hover {
+    background-color: #132536;
 }
 
 .card-body {
