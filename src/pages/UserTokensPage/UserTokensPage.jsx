@@ -27,7 +27,7 @@ export default function UserTokensPage({ user }) {
     return (
         <div className="view-cards-page">
             <Typography variant="h4" className="title-viewcards-page">
-                User Cards
+                Your Business Cards
             </Typography>
             {/* Render user cards here */}
             {cards.map((card) => {

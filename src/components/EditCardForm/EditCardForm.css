@@ -47,10 +47,6 @@
 
 }
 
-
-
-
-
 .edit-occupation-div{
     border-color: black;
     border-width: 1px;
@@ -60,6 +56,7 @@
     top: 50px;
     width: 350px;
 }
+
 .edit-email-div{
     border-color: black;
     border-width: 1px;
@@ -69,6 +66,7 @@
     bottom: 15px;
     width: 350px;
 }
+
 .edit-phoneNum-div{
     border-color: black;
     border-width: 1px;
@@ -78,6 +76,7 @@
     top: 40px;
     width: 350px;
 }
+
 .edit-socials-div{
     border-color: black;
     border-width: 1px;
@@ -87,6 +86,7 @@
     bottom: 25px;
     width: 350px;
 }
+
 .edit-color-div{
     border-color: black;
     border-width: 1px;
@@ -96,6 +96,7 @@
     top: 30px;
     width: 350px;
 }
+
 .edit-quote-div{
     border-color: black;
     border-width: 1px;
@@ -107,34 +108,37 @@
     
 }
 
-
-
-
 .delete-card-button{
     font-size: 16px;
     margin-right: 375px;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    background-image: linear-gradient(to right, #FF2400 0%, #FFA500 100%);
+    border-radius: 10px;
+    border: 2px solid gray;
+    color: red;
+    /* background-image: linear-gradient(to right, #FF2400 0%, #FFA500 100%); */
     padding: 3px 8px;
 }
 .save-changes-button{
     font-size: 16px;
     border-radius: 5px;
-    color: white;
-    border: none;
-    background-image: linear-gradient(to right, #056608 0%, #9ACD32 100%);
+    color: #056608;
+    border: 2px solid gray;
+    /* background-image: linear-gradient(to right, #056608 0%, #9ACD32 100%); */
     padding: 3px 10px;
 }
 .cancel-button{ 
     font-size: 16px;
     margin-right: 5px;
     border-radius: 5px;
-    color: white;
-    border: none;
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: #2575fc;
+    border: 2px solid gray;
+    /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
     padding: 3px 8px;
+}
+
+.delete-card-button:hover,
+.save-changes-button:hover,
+.cancel-button:hover {
+    background-color: white;
 }
 
 .line{
@@ -146,4 +150,50 @@
     bottom: 390px;
     left: 380px;
     width: 1px;
+}
+
+.delete-confirmation-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-confirmation-dialog {
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-confirmation-paragraph {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 130px;
+}
+
+.delete-confirmation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-confirm-button {
+    color: red;
+    margin-top: 60px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+
+.delete-confirm-button:hover {
+    background-color: #ffffff;
+}
+
+.delete-cancel-button {
+    margin-top: 60px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+
+.delete-cancel-button:hover {
+    background-color: #ffffff;
 }

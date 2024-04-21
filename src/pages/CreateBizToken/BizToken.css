@@ -41,12 +41,17 @@
     border-color: #555;
 }
 
-
 .BizToken-Submit{
     margin: 20px 0px 10px;
     font-size: 16px;
     border-radius: 5px;
-    background-color: rgba(0,128,0,0.4);
+    border: 2px solid gray;
+    /* background-color: rgba(0,128,0,0.4); */
+    color: rgba(0, 80, 0, 0.4);
+}
+
+.BizToken-Submit:hover {
+    background-color: #ffffff;
 }
 
 ::placeholder{

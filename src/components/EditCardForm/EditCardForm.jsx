@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-// import { BiTrash } from 'react-icons/bi';
+import React, { useState } from 'react';
 import * as cardsAPI from '../../utilities/cards-api';
 import { useNavigate } from 'react-router-dom';
 import './EditCardForm.css';

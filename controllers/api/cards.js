@@ -1,5 +1,4 @@
 const Card = require('../../models/card');
-const User = require('../../models/user');
 
 module.exports = {
     create,
@@ -11,9 +10,7 @@ module.exports = {
 
 async function create(req, res) {
     const { email, occupation, phoneNum, socials, color, quote } = req.body;
-    console.log(email, occupation, phoneNum, 'hello')
     const { name, _id } = req.user;
-    console.log(name, "controllers");
 
     try {
       const newCard = await Card.create({ 
@@ -25,10 +22,9 @@ async function create(req, res) {
         color: color,
         quote: quote
       });
+
       res.json(newCard);
-
       console.log(newCard);
-
 
     } catch (error) {
       console.error(error);
@@ -45,6 +41,7 @@ async function getCardById(req, res) {
         if (!card) {
             return res.status(404).json({ message: 'Card not found' });
         }
+
         res.json(card);
 
         console.log(card);
@@ -60,19 +57,11 @@ async function fetchCardsByUserId(req, res) {
     try {
         // Fetch all cards from the database
         const userId = req.params.userId;
-
-        console.log(userId)
         const cards = await Card.find({ user: userId }).sort({ createdAt: -1 }).exec();
 
         if (!cards || cards.length === 0) {
           return res.status(404).json({ error: 'No cards found for the user' });
         }
-
-        // const cards = await Card
-        // .find()
-        // .populate('user')
-        // .sort({ _id: -1 })
-        // .exec();
     
         // Send the cards data in the response
         res.json(cards);
@@ -135,6 +124,4 @@ async function deleteCard(req, res) {
         console.error(error);
         res.status(500).json({ error: 'Failed to delete the card' });
     }
-
-
 }

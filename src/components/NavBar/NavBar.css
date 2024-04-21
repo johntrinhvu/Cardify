@@ -62,7 +62,7 @@
 }
 
 .dropdown-item:hover {
-    background-color: #f0f0f0;
+    color: #929292;
 }
 
 .show {
@@ -71,4 +71,8 @@
 
 .user-name {
     font-size: 22px;
+}
+
+.navbar-user:hover {
+    color: #929292;
 }
