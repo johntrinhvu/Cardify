@@ -6,6 +6,7 @@ import HomePage from '../HomePage/HomePage';
 import NavBar from '../../components/NavBar/NavBar';
 import BizToken from '../CreateBizToken/BizToken';
 import PersonalBizToken from '../PersonalBizToken/PersonalBizToken';
+import UserTokensPage from '../UserTokensPage/UserTokensPage';
 
 import '../App/App.css';
 
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/" element={<HomePage user={user} />}/>
             <Route path="/cards/new" element={<BizToken user={user} />} />
             <Route path="/cards/:cardId" element={<PersonalBizToken />} />
+            <Route path="/cards/personal/:userId" element={<UserTokensPage user={user} />} />
           </Routes>
         </>
       ) : (
