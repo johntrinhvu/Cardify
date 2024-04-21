@@ -1,5 +1,6 @@
 # Cardify
 ## A Virtual Business Card Application
+### Developed by: John Vu, Jeffrey Luo, Dylan Tran, and Daniel Coyle.
 
 ## Description
 Cardify allows users to create virtual business cards, which displays users' name, occupation, a short summary about themselves, email, phone number, and social media links. The project was developed over a span of 32 hours, with very minimal rest and sleep.
@@ -44,4 +45,4 @@ There were not that many planning materials used in the development in this proj
 - Implement a QR code feature for an easy and wide-accessible usage of sharing business cards.
 
 ## Website
-The application is deployed and can be accessed at [Cardify]
+The application is deployed and can be accessed at [Cardify](https://cardify-uclahacks-e0b7f380565e.herokuapp.com/)
