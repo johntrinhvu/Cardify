@@ -34,7 +34,7 @@ export default function NavBar({ user, setUser }) {
                     </div>
                     {showDropdown && (
                         <div className="dropdown-content">
-                            <Link to="/cards/:Id" className="dropdown-item" onClick={handleLinkClick}>View Cards</Link>
+                            <Link to={`/cards/personal/${user._id}`} className="dropdown-item" onClick={handleLinkClick}>View Cards</Link>
                             <Link to="" onClick={handleLogOut} className="dropdown-item">Log Out</Link>
                         </div>
                     )}

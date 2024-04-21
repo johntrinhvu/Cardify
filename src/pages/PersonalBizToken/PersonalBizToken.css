@@ -10,7 +10,10 @@
     width: 800px;
     height: 500px;
     background-color: #ffffff;
-    border: 1px solid #000000;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    background-image: url('../../assets/cardbg2.jpg');
+    background-size: cover;
     border-radius: 5px;
     margin: 0 auto;
 }
@@ -43,10 +46,11 @@
 }
 
 .edit-button-cardpage {
-    background-color: #007bff;
+    background-color: #020e1a;
     color: #ffffff;
     border: none;
     padding: 10px 10px;
+    margin-top: -2rem;
     border-radius: 5px;
     cursor: pointer;
 }

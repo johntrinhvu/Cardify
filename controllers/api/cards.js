@@ -1,9 +1,10 @@
 const Card = require('../../models/card');
+const User = require('../../models/user');
 
 module.exports = {
     create,
     getCardById,
-    fetchCards,
+    fetchCardsByUserId,
     updateCard,
     deleteCard
 };
@@ -55,14 +56,23 @@ async function getCardById(req, res) {
 
 }
 
-async function fetchCards(req, res) {
+async function fetchCardsByUserId(req, res) {
     try {
         // Fetch all cards from the database
-        const cards = await Card
-        .find()
-        .populate('user')
-        .sort({ _id: -1 })
-        .exec();
+        const userId = req.params.userId;
+
+        console.log(userId)
+        const cards = await Card.find({ user: userId }).sort({ createdAt: -1 }).exec();
+
+        if (!cards || cards.length === 0) {
+          return res.status(404).json({ error: 'No cards found for the user' });
+        }
+
+        // const cards = await Card
+        // .find()
+        // .populate('user')
+        // .sort({ _id: -1 })
+        // .exec();
     
         // Send the cards data in the response
         res.json(cards);

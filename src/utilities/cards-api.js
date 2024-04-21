@@ -23,9 +23,9 @@ export async function deleteCard(cardId) {
   return sendRequest(`${BASE_URL}/${cardId}`, 'DELETE');
 }
 
-export async function fetchCards() {
+export async function fetchCardsByUserId(userId) {
   try {
-    const cards = await sendRequest(BASE_URL, 'GET');
+    const cards = await sendRequest(`${BASE_URL}/personal/${userId}`, 'GET');
     return cards;
     
   } catch (error) {

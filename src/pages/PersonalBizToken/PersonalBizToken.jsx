@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import EditCardForm from '../../components/EditCardForm/EditCardForm';
 import * as cardsAPI from '../../utilities/cards-api';
-import { Link } from 'react-router-dom';
 import './PersonalBizToken.css';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -92,7 +91,7 @@ export default function PersonalBizToken() {
                     ) : (
                         <div className="card-layout">
                             <div className="card-user">
-                                <h3 className="user-name-card">{card.user.name}</h3>
+                                <h3 className="user-name-card" style={{ color: card.color }}>{card.user.name}</h3>
                                 {currentUser === cardUserId && (
                                     <div className="edit-options">
                                         <button className="edit-button-cardpage" onClick={handleEdit} title="Edit">
