@@ -84,7 +84,7 @@
 
 .socials-h3 {
     position: absolute;
-    bottom: 250px;
+    bottom: 25vh;
 }
 
 .email-h3 {
@@ -94,7 +94,7 @@
 .phoneNum-h3 {
     margin: 0;
     position: absolute;
-    bottom: 250px;
+    bottom: 25vh;
 }
 
 .quote-h3 {
