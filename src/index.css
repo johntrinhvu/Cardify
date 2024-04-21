@@ -93,6 +93,5 @@ p {
 span {
   font-weight: 400;
   text-decoration: inherit;
-  color: #3B4EF3;
-  cursor: pointer;
+  /* color: #3B4EF3; */
 }
